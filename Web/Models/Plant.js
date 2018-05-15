@@ -19,6 +19,10 @@ var plantSchema = mongoose.Schema({
   active:{
     type: Boolean,
     default: false
+  },
+  moisture:{
+    type: Number,
+    default: 0
   }
 });
 

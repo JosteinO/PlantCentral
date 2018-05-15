@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 });
 
 //Get plants
-app.get('/plants', (req, res) => {
+app.get('/api/plants', (req, res) => {
   Plant.getPlants(function(err, plants){
     if(err){
       throw err;
@@ -30,7 +30,7 @@ app.get('/plants', (req, res) => {
 });
 
 //New plant
-app.post('/newplant', (req, res) => {
+app.post('/api/newplant', (req, res) => {
   var plant = req.body;
   Plant.addPlant(plant, function(err, plant){
     if(err){
@@ -41,7 +41,7 @@ app.post('/newplant', (req, res) => {
 });
 
 //update plant
-app.put('/up/:_id', (req, res) => {
+app.put('/api/up/:_id', (req, res) => {
   var id = req.params._id;
   var plant = req.body;
   Plant.updatePlant(id, plant, {}, function(err, plant){
@@ -53,7 +53,7 @@ app.put('/up/:_id', (req, res) => {
 });
 
 //confirm plant
-app.put('/confirm/:_id', (req, res) => {
+app.put('/api/confirm/:_id', (req, res) => {
   var id = req.params._id;
   var plant = req.body;
   Plant.confirmPlant(id, plant, {}, function(err, plant){
@@ -65,7 +65,7 @@ app.put('/confirm/:_id', (req, res) => {
 });
 
 //Get plant
-app.get('/plant/:_id', (req, res) => {
+app.get('/api/plant/:_id', (req, res) => {
   Plant.getPlantById(req.params._id, function(err, plant){
     if(err){
       throw err;
@@ -102,4 +102,4 @@ app.post('/api/pingbutton/', (req, res) => {
 
 
 //Server listener
-app.listen(3000, () => console.log('Listening on port 3000...'));
+app.listen(4000, () => console.log('Listening on port 4000...'));
