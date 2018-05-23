@@ -6,9 +6,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">My plants</h1>
+          <h1 className="App-title">Plant monitor</h1>
         </header>
-        <Plants />
+        <Plants/>
       </div>
     );
   }

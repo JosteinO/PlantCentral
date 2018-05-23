@@ -23,6 +23,12 @@ var plantSchema = mongoose.Schema({
   moisture:{
     type: Number,
     default: 0
+  },
+  owner:{
+    type: String
+  },
+  group:{
+    type: String
   }
 });
 

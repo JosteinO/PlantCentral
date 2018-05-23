@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Plants.css';
+import PlantCard from '../Plant/PlantCard';
+import {Container, Row, Col } from 'reactstrap';
 
 class Plants extends Component {
   constructor(){
@@ -14,17 +16,21 @@ class Plants extends Component {
       .then(plants => this.setState({plants }, () => console.log('plants fetched..',
       plants)));
   }
-  render() {
+  render () {
+    let plantCards = this.state.plants.map(plants => {
+      return (
+        <Col sm="4">
+          <PlantCard plants={plants} />
+        </Col>
+      )
+    })
     return (
-      <div>
-        <h2>Plants</h2>
-        <ul>
-          {this.state.plants.map(plants =>
-          <li key={plants._id}>{ plants.name } { plants.moisture }</li>
-          )}
-        </ul>
-      </div>
-    );
+      <Container fluid>
+        <Row>
+          {plantCards}
+        </Row>
+      </Container>
+    )
   }
 }
 
