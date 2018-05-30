@@ -4,7 +4,7 @@ An IoT application that uses a central webserver to store data and administrate 
 Data about the plants are collected from nodes made from nodeMCU boards with a soil moisture sensor.
 
 Goals:
-- plant status update realtime in app using reactjs.
+- plant status update realtime in app using react.js and socket.io.
 - Use AI to calculate when plant need to be watered next/how often based on history data.
 - API to get data about users plants from server.
 - Loginn and multiple users.
